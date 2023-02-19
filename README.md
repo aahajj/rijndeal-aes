@@ -6,7 +6,7 @@ A C implementation of the Rijndael Encryption Algorithm using T-Tables.
 
 This package is in the public domain and has no restrictions on use. It can be compiled as either C or C++ and can be used in any C environment.
 
-## Installation 
+## Installation
 
 1. Clone the repository.
 2. Building the program: The project uses a Makefile for building the program. To build the program, navigate to the directory containing the Makefile and run the `make` command.
@@ -14,7 +14,8 @@ This package is in the public domain and has no restrictions on use. It can be c
 It encrypts the standard input (padding it with spaces, if necessary), and writes the result to the specified cryptofile.
 4. The decryption program is called as follows: `decrypt  password  cryptofile`.
 It decrypts the cryptofile contents and sends the result (padded with spaces, if necessary) to the standard output.
-5. To clean the project and remove all object files and executables, run the command: `make clean`.
+5. To build the timecop test run the `make test` command.
+6. To clean the project and remove all object files and executables, run the command: `make clean`.
 
 ## Setting up the encryption/decryption buffer
 
@@ -69,11 +70,11 @@ int nrounds;
 - Antoon Bosselaers antoon.bosselaers@esat.kuleuven.ac.be
 - Paulo Barreto paulo.barreto@terra.com.br
 
-## Modified by 
+## Modified by
 
 - Philip J. Erdelsky
 
-## Date 
+## Date
 
 - September 3, 2002
 
