@@ -2,6 +2,8 @@ CC=gcc
 CFLAGS=-I. -Wall -g
 DEPS = rijndael.h
 
+default: aes.so
+
 all: decrypt encrypt
 
 %.o: %.c $(DEPS)
@@ -17,7 +19,10 @@ encrypt: encrypt.o rijndael.o
 test: rijndael.c timecop_test.c
 	$(CC) rijndael.c timecop_test.c -o timecop_test $(CFLAGS)
 
+aes.so: rijndael.o
+	$(CC) -Wall -Os -g -shared -o libaes.so rijndael.o
+
 .PHONY: clean
 
 clean:
-	rm -f *.o encrypt decrypt timecop_test
+	rm -f *.so *.o encrypt decrypt timecop_test
