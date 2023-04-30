@@ -46,8 +46,7 @@ extern void InitTarget(FILE *input) {
   // as this may generate false positives.
   //
 
-  nrounds = rijndaelSetupEncrypt(rk, key, KEYBITS);
   if (fread(key, 1, 16, input) != 16)
     return;
-
+  nrounds = rijndaelSetupEncrypt(rk, key, KEYBITS);
 }
